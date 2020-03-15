@@ -56,9 +56,22 @@ $(function () {
     })
 
     $yan2.click(function(){
-        setTimeout(function()  {
-            console.log('11')
-            $yanmsg.html('请求超时，请稍后再试')
-        }, 1000);
+        // $yan2 = $('#yan2')
+        // $yan2.setAttr('disabled');
+        $yan2.attr("disabled","disabled")
+        var i = 60,
+            timer;
+        timer = setInterval(function (){
+            i--;
+            if(i === 0){
+                clearInterval(timer);
+                $yan2.val('获取验证码');
+                $yan2.removeAttr('disabled')
+            }else{
+    
+                $yan2.val('获取验证码('+i+'s)')
+            }
+            
+        }, (1000));   
     })
 })
