@@ -30,16 +30,11 @@ $(function () {
             $tel.select();
             return false;
        }
-       if(!/^-?(0|[1-9]\d*)(\.\d*)?([eE][+-]?\d+)?$/.test($tel.val())){
-            $telmsg.html('必须是数字')
-            $tel.select();
-            return false;
-       }
-       if($tel.val().length<11){
+       if(!/^(((13[0-9]{1})|(15[0-9]{1})|(16[0-9]{1})|(17[3-8]{1})|(18[0-9]{1})|(19[0-9]{1})|(14[5-7]{1}))+\d{8})$/.test($tel.val())){
             $telmsg.html('手机号格式不正确')
             $tel.select();
             return false;
-       }
+        }  
     })
 
     $pwd.focusout(function () {
