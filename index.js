@@ -7,8 +7,7 @@ $(function () {
         $telmsg = $('#telmsg'),
         $pwdmsg = $('#pwdmsg'),
         $yanmsg = $('#yanmsg'),
-        $yan2 = $('#yan2'),
-        $btn = $('#btn');
+        $yan2 = $('#yan2');
 
     $name.focusout(function () {
         if(!/^[a-zA-Z0-9_\u4e00-\u9fa5]+[^\d]+$/.test($name.val()) || $name.val()===''){
@@ -55,10 +54,8 @@ $(function () {
                 $yan2.val('获取验证码');
                 $yan2.removeAttr('disabled')
             }else{
-    
                 $yan2.val('获取验证码('+i+'s)')
             }
-            
         }, (1000));   
     })
 })
