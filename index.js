@@ -7,7 +7,9 @@ $(function () {
         $telmsg = $('#telmsg'),
         $pwdmsg = $('#pwdmsg'),
         $yanmsg = $('#yanmsg'),
-        $yan2 = $('#yan2');
+        $yan2 = $('#yan2'),
+        $btn = $('#btn');
+
 
     $name.focusout(function () {
         if(!/^[a-zA-Z0-9_\u4e00-\u9fa5]+[^\d]+$/.test($name.val()) || $name.val()===''){
@@ -58,4 +60,20 @@ $(function () {
             }
         }, (1000));   
     })
+
+    $btn.click(function () {
+        if($name.val()===''){
+            $namemsg.html('用户名不能为空')
+            
+        }
+        if($pwd.val()==''){
+            $pwdmsg.html('密码不能为空')
+        }
+        if($tel.val()==''){
+            $telmsg.html('手机号不能为空')
+        }
+        if($yan.val()==''){
+            $yanmsg.html('验证码不能为空')
+        }
+      })
 })
