@@ -66,13 +66,13 @@ $(function () {
             $namemsg.html('用户名不能为空')
             
         }
-        if($pwd.val()==''){
+        if($pwd.val()===''){
             $pwdmsg.html('密码不能为空')
         }
-        if($tel.val()==''){
+        if($tel.val()===''){
             $telmsg.html('手机号不能为空')
         }
-        if($yan.val()==''){
+        if($yan.val()===''){
             $yanmsg.html('验证码不能为空')
         }
       })
