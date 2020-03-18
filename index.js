@@ -12,7 +12,12 @@ $(function () {
 
 
     $name.focusout(function () {
-        if(!/^(?!\d+$)[\da-zA-Z]+$/.test($name.val()) || $name.val()===''){
+        if(!/^[\u4e00-\u9fa5]{1,7}$|^[\dA-Za-z_]{1,14}$/.test($name.val()) || $name.val()===''){
+            $namemsg.html('用户名仅支持英文、数字、下划线且不能为纯数字')
+            $name.select();
+            return false;
+        }
+        if(/^[0-9]+$/.test($name.val())){
             $namemsg.html('用户名仅支持英文、数字、下划线且不能为纯数字')
             $name.select();
             return false;
