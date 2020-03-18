@@ -12,7 +12,7 @@ $(function () {
 
 
     $name.focusout(function () {
-        if(!/^[a-zA-Z0-9_\u4e00-\u9fa5]+[^\d]+$/.test($name.val()) || $name.val()===''){
+        if(!/^(?!\d+$)[\da-zA-Z]+$/.test($name.val()) || $name.val()===''){
             $namemsg.html('用户名仅支持中英文、数字、下划线且不能为纯数字')
             $name.select();
             return false;
@@ -74,6 +74,9 @@ $(function () {
         }
         if($yan.val()===''){
             $yanmsg.html('验证码不能为空')
+        }
+        else{
+            $yanmsg.html('')
         }
       })
 })
